@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://kurdn3mldcnd"]
+
+[ext_resource type="Script" path="res://Scenes/terminal_instance.gd" id="1_3xnrl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8tks"]
+
+[node name="Window" type="Window"]
+transparent_bg = true
+title = "Terminal"
+initial_position = 1
+size = Vector2i(600, 400)
+transparent = true
+max_size = Vector2i(1900, 1060)
+keep_title_visible = true
+content_scale_aspect = 3
+script = ExtResource("1_3xnrl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+offset_right = 600.0
+offset_bottom = 400.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VSplitContainer/MarginContainer"]
+layout_mode = 2
+fit_content = true
+scroll_following = true
+
+[node name="terminal_line" type="HBoxContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="VSplitContainer/terminal_line"]
+layout_mode = 2
+text = "[user@blackwall]$~"
+
+[node name="terminal_input" type="LineEdit" parent="VSplitContainer/terminal_line"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t8tks")
+flat = true
+caret_blink = true
+caret_blink_interval = 1.0
+caret_force_displayed = true

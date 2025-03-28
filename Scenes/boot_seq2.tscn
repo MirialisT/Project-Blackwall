@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgov8eopqh8je"]
+
+[ext_resource type="Script" path="res://Scripts/boot_seq_2.gd" id="1_7w864"]
+[ext_resource type="Texture2D" uid="uid://v3sjftxk4nya" path="res://Background/boot2.PNG" id="2_3jfaa"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_7w864")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 649.0
+texture = ExtResource("2_3jfaa")
+expand_mode = 2
